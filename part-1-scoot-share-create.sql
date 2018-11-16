@@ -49,3 +49,7 @@ create table manufacturer(
   manu_name varchar(50),
   primary key(manu_name)
 );
+
+--remember to make comments in design decision section that says that many of the money and boolean values are
+--transitively dependent, but their inclusion is useful for data representation and would just involve
+--some triggers and constraints in the design
