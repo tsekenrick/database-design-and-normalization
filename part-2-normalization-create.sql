@@ -15,10 +15,6 @@ create table staging.pokemon(
   legendary varchar(10)
 );
 
-copy staging.pokemon (pokedex_num, pokename, type_one, type_two, hp, attack, defense,
-sp_atk, sp_def, speed, generation, legendary)
-from 'D:/Documents/NYU/Data Analysis/tsekenrick-homework05/pokemon_cleaned.csv' delimiter ',' csv header;
-
 -----
 
 create table pokedex_num(
