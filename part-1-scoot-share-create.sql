@@ -1,5 +1,6 @@
 create table customer(
   customer_id serial,
+  name varchar(50),
   address varchar(100) references address(address),
   email varchar(50),
   init_regi timestamp,
@@ -25,7 +26,7 @@ create table transaction(
   penalty money,
   total_cost money,
   notes text,
-  scooter_id references scooter(scooter_id),
+  scooter_id integer references scooter(scooter_id),
   primary key(transaction_id)
 );
 
