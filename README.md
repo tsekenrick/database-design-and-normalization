@@ -37,6 +37,14 @@ Similarly, I also assumed that the business logic of restricting a user to
 borrowing one scooter at a time is done with the front-end app, though the
 `is_borrowing` field can be used to help create that functionality.
 
+There are also some ambiguities within the transaction table - namely the `start_time`,
+`return_by`, `end_time` and `prepay_amt` fields may or may not have transitive dependencies
+depending on the exact business logic of Scoot Share. For example, if prepaying immediately
+fixes your borrowing time, then `end_time` becomes transitively dependent. However, if
+you can prepay a partial amount and then pay the remainder on return, there is no such
+issue. Generally, the way that `return_by` and `end_time` are calculated is sort of at
+the whim of the particulars of the business model, so some assumptions had to be made there.
+
 I assumed that all scooters of the same model number would have the same 
 properties, i.e. same range, weight and top speed.
 
