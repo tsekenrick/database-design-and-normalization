@@ -18,6 +18,7 @@ create table address(
 create table transaction(
   transaction_id serial,
   customer_id integer references customer(customer_id),
+  start_time timestamp,
   return_by timestamp,
   end_time timestamp,
   prepay_amt money,
@@ -33,9 +34,6 @@ create table transaction(
 create table scooter(
   scooter_id serial,
   model_num integer references model_number(model_num),
-  range numeric,
-  weight numeric,
-  top_speed numeric,
   condition varchar(20) check (condition in ('new', 'slightly used', 'used')),
   primary key(scooter_id)
 );
@@ -43,6 +41,9 @@ create table scooter(
 create table model_number(
   model_num integer,
   manu_name varchar(50) references manufacturer(manu_name),
+  range numeric,
+  weight numeric,
+  top_speed numeric,
   primary key(model_num)
 );
 
