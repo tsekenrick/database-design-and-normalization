@@ -27,8 +27,8 @@ like an uncessary complication.
 
 
 ### Assumptions
-The most notable assumption made is regarding the functionality for retrieving info
-of returning customers. While the database certainly includes enough information
+I assumed that the functionality for retrieving info of returning customers, was largely
+handled by the front-end application. While the database certainly includes enough information
 to locate a returning customer given certain pieces of information (e.g. some
 combination of name, email, address, or even the customer ID), I assume that 
 implementing this functionality would be up to the front-end app, not the database.
@@ -44,6 +44,18 @@ fixes your borrowing time, then `end_time` becomes transitively dependent. Howev
 you can prepay a partial amount and then pay the remainder on return, there is no such
 issue. Generally, the way that `return_by` and `end_time` are calculated is sort of at
 the whim of the particulars of the business model, so some assumptions had to be made there.
+
+For the freeform notes associated with each transaction, I assumed that each note would be
+unique, and not some generic pre-generated note - because of this I kept the note as an
+attribute within the transaction table. However, for the tags associated with the notes,
+I assumed these were selected from a pool of tags (i.e. non-unique), so they were kept
+in a separate table with a foreign key referencing the tag in the transaction table, 
+to demonstrate the one-to-many relationship.
+
+For the referral system, I assumed that each person could be referred by only one person,
+therefore that it is a one (customer doing the referring) to many (all people that the
+customer referred) relationship, which can be illustrated by having a foreign key that
+references the customer table itself.
 
 I assumed that all scooters of the same model number would have the same 
 properties, i.e. same range, weight and top speed.
