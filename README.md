@@ -1,4 +1,11 @@
-# Homework 05
+# Database Design and Normalization
+This two-part assignment was designed to further our familiarization with designing a SQL database, importing data into our model
+and running queries. The first part of the assignment asks us to create a database that represents the business model of a
+hypothetical scooter rental company. We were given some liberties as to how much we should normalize our data, considering the
+purpose of the model. We then drew up an ER diagram, created the database and wrote some mock queries.
+
+The second part of the assignment asks us to find an existing, un-normalized dataset, and design a SQL database that normalizes and
+represents a portion of that data. We then import the data into our model and run queries on it.
 
 ## Scoot-Share
 
